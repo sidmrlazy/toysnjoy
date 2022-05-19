@@ -13,7 +13,22 @@ input::-webkit-inner-spin-button {
   color: #fff;
   background: #eb4634;
 }
-
+.maintenance {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.maintenance-lottie {
+  width: 300px;
+  height: 300px;
+}
+.maintenance h1 {
+  font-weight: bolder;
+}
+.maintenance p {
+  font-size: 24px;
+}
 /* Navbar */
 .navbar {
   background-color: #00000000 !important;
@@ -529,6 +544,7 @@ input::-webkit-inner-spin-button {
   align-items: flex-start;
   border-top: 1px solid #e7e7e7e7;
   padding: 20px;
+  position: fixed;
 }
 .footer-pills {
   margin-bottom: 20px;
@@ -576,11 +592,13 @@ input::-webkit-inner-spin-button {
   align-items: center;
   padding-top: 10px;
   border-top: 1px solid #e7e7e7e7;
+  width: 100%;
 }
 .bottom-footer a {
   text-decoration: none;
   color: #eb4634;
   font-weight: bold;
+  text-align: center;
 }
 
 @media only screen and (max-width: 600px) {

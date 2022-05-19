@@ -1,5 +1,5 @@
-<footer class="footer">
-    <div>
+<footer class="footer fixed-bottom">
+    <!-- <div>
         <img class="mb-3" src="assets/images/logo/logo.png" alt="">
 
         <div class="footer-pills">
@@ -61,19 +61,20 @@
             <li>Terms & Conditions</li>
         </a>
     </ul>
-</footer>
-<div class="bottom-footer">
-    <p>&#169; Toys N Joy Playschool | Designed & Developed by <a href="https://onlynus.com" target="_blank">Onlyn</a>
-    </p>
-</div>
+</footer> -->
+    <div class="bottom-footer">
+        <p>&#169; Toys N Joy Playschool | Designed & Developed by <a href="https://onlynus.com"
+                target="_blank">Onlyn</a>
+        </p>
+    </div>
 
-<!-- Ionicons -->
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-<!-- Lottie -->
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!-- Lottie -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-</body>
+    </body>
 
-</html>
+    </html>
