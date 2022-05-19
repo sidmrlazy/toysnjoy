@@ -3,4 +3,5 @@
 <?php include('founders/founder-banner.php') ?>
 <?php include('founders/founders.php') ?>
 <?php include('founders/counselling-appointment.php') ?>
-<?php include('includes/footer.php') ?>
+<?php //include('includes/footer.php') 
+?>
