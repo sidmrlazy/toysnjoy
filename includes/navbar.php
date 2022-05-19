@@ -42,7 +42,7 @@
                 </li>
             </ul>
             <div class="nav-item login-btn">
-                <a aria-current="page" href="login.php">Parent Login</a>
+                <a aria-current="page" href="index.php">Parent Login</a>
             </div>
             <div class="d-flex">
                 <a class="nav-social-media-icon" href="https://www.facebook.com/TNJPlayschool" target="_blank">
