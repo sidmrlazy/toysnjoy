@@ -34,7 +34,7 @@
         <li>Behaviour regulation and management.</li>
     </ul>
 
-    <div class="srp-notice container ">
+    <!-- <div class="srp-notice container ">
         <p class="notice-1">Apply to TNJ School Readiness Programme.</p>
         <table class="table table-bordered">
             <thead>
@@ -61,6 +61,6 @@
 
             </tbody>
         </table>
-    </div>
+    </div> -->
 </div>
 <?php include('includes/footer.php') ?>
