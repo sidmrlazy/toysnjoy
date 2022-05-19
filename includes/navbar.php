@@ -34,18 +34,15 @@
                         <li><a class="dropdown-item" href="teaching-methodology.php#grow-with-us">Grow with us</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="#">Daycare</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Admissions</a>
+                    <a class="nav-link" aria-current="page" href="admissions.php">Admissions</a>
                 </li>
             </ul>
             <div class="nav-item login-btn">
-
-                <a aria-current="page" href="index.php">Login | Register</a>
-
-                <!-- <a class="nav-link" href=""></a> -->
+                <a aria-current="page" href="login.php">Parent Login</a>
             </div>
             <div class="d-flex">
                 <ion-icon class="nav-social-media-icon" name="logo-facebook"></ion-icon>

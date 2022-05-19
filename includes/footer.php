@@ -1,5 +1,5 @@
-<footer class="footer fixed-bottom">
-    <!-- <div>
+<footer class="footer">
+    <div>
         <img class="mb-3" src="assets/images/logo/logo.png" alt="">
 
         <div class="footer-pills">
@@ -30,22 +30,22 @@
         <a href="index.php">
             <li>Home</li>
         </a>
-        <a href="">
+        <a href="curriculum.php">
             <li>Curriculum</li>
         </a>
-        <a href="about-us.php#founders">
+        <a href="founders.php">
             <li>Founders</li>
         </a>
-        <a href="">
+        <a href="curriculum.php#amenities">
             <li>Amenities</li>
         </a>
-        <a href="">
+        <a href="teaching-methodology.php">
             <li>Teaching Methodology</li>
         </a>
-        <a href="">
+        <!-- <a href="">
             <li>Daycare</li>
-        </a>
-        <a href="">
+        </a> -->
+        <a href="admissions.php">
             <li>Admissions</li>
         </a>
     </ul>
@@ -61,20 +61,19 @@
             <li>Terms & Conditions</li>
         </a>
     </ul>
-</footer> -->
-    <div class="bottom-footer">
-        <p>&#169; Toys N Joy Playschool | Designed & Developed by <a href="https://onlynus.com"
-                target="_blank">Onlyn</a>
-        </p>
-    </div>
+</footer>
+<div class="bottom-footer">
+    <p>&#169; Toys N Joy Playschool | Designed & Developed by <a href="https://onlynus.com" target="_blank">Onlyn</a>
+    </p>
+</div>
 
-    <!-- Ionicons -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<!-- Ionicons -->
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    <!-- Lottie -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<!-- Lottie -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-    </body>
+</body>
 
-    </html>
+</html>
