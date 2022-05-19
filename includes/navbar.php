@@ -45,9 +45,17 @@
                 <a aria-current="page" href="login.php">Parent Login</a>
             </div>
             <div class="d-flex">
-                <ion-icon class="nav-social-media-icon" name="logo-facebook"></ion-icon>
-                <ion-icon class="nav-social-media-icon" name="logo-instagram"></ion-icon>
-                <ion-icon class="nav-social-media-icon" name="logo-whatsapp"></ion-icon>
+                <a class="nav-social-media-icon" href="https://www.facebook.com/TNJPlayschool" target="_blank">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+                <a class="nav-social-media-icon" href="https://www.instagram.com/toysnjoys.official/?hl=en"
+                    target="_blank">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+                <a href="https://wa.me/919005556677?text=I%20have%20an%20enquiry%20" class="nav-social-media-icon"
+                    target="_blank">
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                </a>
             </div>
             <!-- <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

@@ -51,6 +51,8 @@ input::-webkit-inner-spin-button {
 .nav-social-media-icon {
   font-size: 24px;
   margin: 10px;
+  text-decoration: none;
+  color: #000;
 }
 .nav-social-media-icon:hover {
   color: #eb4634 !important;
@@ -884,6 +886,46 @@ input::-webkit-inner-spin-button {
     flex-direction: column;
     margin-top: 30px;
     margin-bottom: 30px;
+  }
+
+  /* Admission Form */
+  .admission-section {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .admission-section h1 {
+    margin: 0;
+    font-weight: bold;
+  }
+  .admission-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .admission-form {
+    border: 1px solid #e7e7e7;
+    padding: 30px;
+    border-radius: 5px;
+  }
+  .admission-lottie {
+    width: 100%;
+    height: auto;
+    padding-right: 20px !important;
+    display: none;
+  }
+  .admission-btn {
+    background-color: #eb4634;
+    text-align: center;
+    padding: 15px;
+    font-size: 20px;
+    color: #fff;
+    width: 100%;
+  }
+  .admission-btn:hover {
+    font-weight: bold;
+    color: #fff;
+    transition: 0.5s all ease-in-out;
   }
 
   /* Footer */
