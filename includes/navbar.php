@@ -48,7 +48,7 @@
                 <a class="nav-social-media-icon" href="https://www.facebook.com/TNJPlayschool" target="_blank">
                     <ion-icon name="logo-facebook"></ion-icon>
                 </a>
-                <a class="nav-social-media-icon" href="https://www.instagram.com/toysnjoys.official/?hl=en"
+                <a class="nav-social-media-icon" href="https://instagram.com/playschooltoysnjoy?igshid=YmMyMTA2M2Y="
                     target="_blank">
                     <ion-icon name="logo-instagram"></ion-icon>
                 </a>
