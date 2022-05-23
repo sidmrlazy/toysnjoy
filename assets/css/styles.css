@@ -915,11 +915,16 @@ input::-webkit-inner-spin-button {
     font-size: 20px;
     color: #fff;
     width: 100%;
+    border: 0 !important;
+    border-radius: 5px !important;
   }
   .admission-btn:hover {
     font-weight: bold;
     color: #fff;
     transition: 0.5s all ease-in-out;
+  }
+  .razorpay-btn {
+    width: 100%;
   }
   /* Footer */
   .footer {
