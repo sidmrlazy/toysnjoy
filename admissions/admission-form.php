@@ -233,7 +233,7 @@
             </div>
         </div>
 
-        <div class="form-row">
+        <div class="form-row ">
             <div class="col-md-12 m-2 form-floating mb-3">
                 <input name="af_distance" type="text" class="form-control" id="floatingInput"
                     placeholder="Ditance in Kms">
@@ -241,7 +241,7 @@
             </div>
         </div>
 
-        <div>
+        <div class="form-row table-responsive w-100">
             <table class="table">
                 <thead>
                     <tr>

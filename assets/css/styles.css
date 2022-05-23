@@ -569,8 +569,6 @@ input::-webkit-inner-spin-button {
   color: #fff;
   transition: 0.5s all ease-in-out;
 }
-.razorpay-btn {
-}
 
 /* Footer */
 .footer {
@@ -888,27 +886,27 @@ input::-webkit-inner-spin-button {
   .admission-section {
     margin-top: 30px;
     margin-bottom: 30px;
-  }
-  .admission-section h1 {
-    margin: 0;
-    font-weight: bold;
-  }
-  .admission-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
   }
   .admission-form {
-    border: 1px solid #e7e7e7;
-    padding: 30px;
-    border-radius: 5px;
+    border: 1px solid #e7e7e7e7;
+    padding: 10px;
+    border-radius: 10px;
   }
-  .admission-lottie {
+  .form-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column !important;
     width: 100%;
-    height: auto;
-    padding-right: 20px !important;
-    display: none;
+    margin-bottom: 20px;
+  }
+  .form-floating {
+    width: 100%;
+  }
+  .form-label {
+    font-family: "Josefin Sans", sans-serif !important;
+    margin: 0;
   }
   .admission-btn {
     background-color: #eb4634;
@@ -923,7 +921,6 @@ input::-webkit-inner-spin-button {
     color: #fff;
     transition: 0.5s all ease-in-out;
   }
-
   /* Footer */
   .footer {
     display: flex;
