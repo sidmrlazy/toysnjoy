@@ -62,7 +62,7 @@
             $razorpayOrderId = $razorpayOrder['id'];
             $_SESSION['razorpay_order_id'] = $razorpayOrderId;
             $displayAmount = $amount = $orderData['amount'];
-            $checkout = 'automatic';
+            $checkout = 'manual';
             if (isset($_GET['checkout']) and in_array($_GET['checkout'], ['automatic', 'manual'], true)) {
                 $checkout = $_GET['checkout'];
             }
