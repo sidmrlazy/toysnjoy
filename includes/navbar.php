@@ -38,7 +38,7 @@
                     <a class="nav-link" aria-current="page" href="#">Daycare</a>
                 </li> -->
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="admissions.php">Admissions</a>
+                    <a class="nav-link" aria-current="page" href="admissions.php">Admission Form</a>
                 </li>
             </ul>
             <div class="nav-item login-btn">
