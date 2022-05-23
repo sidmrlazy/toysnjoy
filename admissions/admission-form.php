@@ -50,7 +50,7 @@
             // Test Key  rzp_test_s5SlTgzdGzKQT9
             // Test Key Secret = tpNvczXOkhqOLY59C78jSbDZ
 
-            $api = new Api('rzp_test_s5SlTgzdGzKQT9', 'tpNvczXOkhqOLY59C78jSbDZ');
+            $api = new Api('rzp_live_ReANxY0HTVzNPf', 'gTtdrMXvtGTxZLKNwiJB4GSb');
             $orderData = [
                 'receipt'         => $af_father_contact,
                 'amount'          => 500 * 100,
@@ -67,7 +67,7 @@
                 $checkout = $_GET['checkout'];
             }
             $data = [
-                "key"               => 'rzp_test_s5SlTgzdGzKQT9',
+                "key"               => 'rzp_live_ReANxY0HTVzNPf',
                 "amount"            => $amount,
                 "name"              => "Toys N Joy Play School",
                 "description"       => "",
