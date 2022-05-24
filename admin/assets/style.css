@@ -1,0 +1,117 @@
+* {
+  font-family: "Ubuntu", sans-serif;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+::selection {
+  color: #fff;
+  background: #eb4634;
+}
+
+/* =============== Login =============== */
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  float: center;
+}
+.login-form {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.login-form img {
+  width: 20%;
+  height: auto;
+}
+.login-form h1 {
+  margin: 0;
+  color: #eb4634;
+}
+.lottie-container-login {
+  background-color: #eb4634;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+.login-btn {
+  background-color: #eb4634;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  padding: 15px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* =============== Navbar =============== */
+.navbar {
+  background-color: #eb4634 !important;
+}
+.nav-link {
+  font-size: 20px;
+  text-decoration: none;
+  color: #000;
+}
+.nav-link:hover {
+  color: #fff !important;
+}
+.dropdown-item:hover {
+  color: #eb4634 !important;
+}
+
+/* =============== View Section =============== */
+.accordion-button {
+  font-size: 24px;
+  text-decoration: none;
+  color: #000 !important;
+}
+.acc-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.acc-label {
+  margin: 0;
+  color: #777;
+  font-size: 14px;
+}
+.acc-response-failed {
+  font-weight: 400;
+  background-color: #eb4634;
+  color: #fff !important;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.acc-response-success {
+  font-weight: 400;
+  background-color: #239918;
+  color: #fff !important;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+#payment-amount {
+  font-size: 20px;
+}
+.mid-acc-section {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #e7e7e7e7;
+  width: 100%;
+  padding: 10px;
+}

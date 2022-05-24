@@ -101,7 +101,9 @@ function pay_now() {
       af_class,
     success: function (result) {
       var options = {
-        key: "rzp_live_ReANxY0HTVzNPf",
+        // rzp_test_s5SlTgzdGzKQT9
+        // rzp_live_ReANxY0HTVzNPf
+        key: "rzp_test_s5SlTgzdGzKQT9",
         amount: "50000",
         currency: "INR",
         name: "Toys N Joy Play School",
@@ -122,7 +124,6 @@ function pay_now() {
           color: "#eb4634",
         },
       };
-
       var rzp1 = new Razorpay(options);
       rzp1.open();
     },
