@@ -1,3 +1,6 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
 <div class="container admission-section">
     <h1>Admission Form</h1>
     <p>Fill this form below to give your child the best start with educational journey</p>
@@ -7,168 +10,119 @@
     <form action="" method="POST" class="admission-form">
         <?php
         include 'includes/server/config.php';
-        include('razorpay/Razorpay.php');
 
-        use Razorpay\Api\Api;
-
-        if (isset($_POST['submit'])) {
-            $af_child_name = mysqli_real_escape_string($connection, $_POST['af_child_name']);
-            $af_child_gender = mysqli_real_escape_string($connection, $_POST['af_child_gender']);
-            $af_mother_name = mysqli_real_escape_string($connection, $_POST['af_mother_name']);
-            $af_mother_contact = mysqli_real_escape_string($connection, $_POST['af_mother_contact']);
-            $af_mother_occupation = mysqli_real_escape_string($connection, $_POST['af_mother_occupation']);
-            $af_father_name = mysqli_real_escape_string($connection, $_POST['af_father_name']);
-            $af_father_contact = mysqli_real_escape_string($connection, $_POST['af_father_contact']);
-            $af_father_occupation = mysqli_real_escape_string($connection, $_POST['af_father_occupation']);
-            $af_address = mysqli_real_escape_string($connection, $_POST['af_address']);
-            $af_distance = mysqli_real_escape_string($connection, $_POST['af_distance']);
-            $af_member_one_name = mysqli_real_escape_string($connection, $_POST['af_member_one_name']);
-            $af_member_one_age = mysqli_real_escape_string($connection, $_POST['af_member_one_age']);
-            $af_member_one_relation = mysqli_real_escape_string($connection, $_POST['af_member_one_relation']);
-            $af_member_one_occupation = mysqli_real_escape_string($connection, $_POST['af_member_one_occupation']);
-            $af_member_two_name = mysqli_real_escape_string($connection, $_POST['af_member_two_name']);
-            $af_member_two_age = mysqli_real_escape_string($connection, $_POST['af_member_two_age']);
-            $af_member_two_relation = mysqli_real_escape_string($connection, $_POST['af_member_two_relation']);
-            $af_member_two_occupation = mysqli_real_escape_string($connection, $_POST['af_member_two_occupation']);
-            $af_member_three_name = mysqli_real_escape_string($connection, $_POST['af_member_three_name']);
-            $af_member_three_age = mysqli_real_escape_string($connection, $_POST['af_member_three_age']);
-            $af_member_three_relation = mysqli_real_escape_string($connection, $_POST['af_member_three_relation']);
-            $af_member_three_occupation = mysqli_real_escape_string($connection, $_POST['af_member_three_occupation']);
-            $af_member_four_name = mysqli_real_escape_string($connection, $_POST['af_member_four_name']);
-            $af_member_four_age = mysqli_real_escape_string($connection, $_POST['af_member_four_age']);
-            $af_member_four_relation = mysqli_real_escape_string($connection, $_POST['af_member_four_relation']);
-            $af_member_four_occupation = mysqli_real_escape_string($connection, $_POST['af_member_four_occupation']);
-            $af_emergency_name = mysqli_real_escape_string($connection, $_POST['af_emergency_name']);
-            $af_emergency_contact = mysqli_real_escape_string($connection, $_POST['af_emergency_contact']);
-            $af_emergency_relation = mysqli_real_escape_string($connection, $_POST['af_emergency_relation']);
-            $af_class = mysqli_real_escape_string($connection, $_POST['af_class']);
-
-
-            // Live Key  rzp_live_ReANxY0HTVzNPf
-            // Live Key Secret = gTtdrMXvtGTxZLKNwiJB4GSb
-
-            // Test Key  rzp_test_s5SlTgzdGzKQT9
-            // Test Key Secret = tpNvczXOkhqOLY59C78jSbDZ
-
-            $api = new Api('rzp_live_ReANxY0HTVzNPf', 'gTtdrMXvtGTxZLKNwiJB4GSb');
-            $orderData = [
-                'receipt'         => $af_father_contact,
-                'amount'          => 500 * 100,
-                'currency'        => 'INR',
-                'payment_capture' => 1
-            ];
-
-            $razorpayOrder = $api->order->create($orderData);
-            $razorpayOrderId = $razorpayOrder['id'];
-            $_SESSION['razorpay_order_id'] = $razorpayOrderId;
-            $displayAmount = $amount = $orderData['amount'];
-            $checkout = 'manual';
-            if (isset($_GET['checkout']) and in_array($_GET['checkout'], ['automatic', 'manual'], true)) {
-                $checkout = $_GET['checkout'];
-            }
-            $data = [
-                "key"               => 'rzp_live_ReANxY0HTVzNPf',
-                "amount"            => $amount,
-                "name"              => "Toys N Joy Play School",
-                "description"       => "",
-                "image"             => "https:toysnjoy.in/assets/images/logo/logo.png",
-                "prefill"           => [
-                    "name"              => $af_child_name,
-                    "email"             => "care.toysnjoy@gmail.com",
-                    "contact"           => $af_father_contact,
-                ],
-                "theme"             => [
-                    "color"             => "#eb4634"
-                ],
-                "order_id"          => $razorpayOrderId,
-
-            ];
-
-            $json = json_encode($data);
-            require("razorpay/checkout/{$checkout}.php");
-
-            $query = "INSERT INTO admission_form (
-                                 af_child_name,
-                                 af_child_gender,
-                                 af_mother_name,
-                                 af_mother_contact,
-                                 af_mother_occupation,
-                                 af_father_name,
-                                 af_father_contact,
-                                 af_father_occupation,
-                                 af_address,
-                                 af_distance,
-                                 af_member_one_name,
-                                 af_member_one_age,
-                                 af_member_one_relation,
-                                 af_member_one_occupation,
-                                 af_member_two_name,
-                                 af_member_two_age,
-                                 af_member_two_relation,
-                                 af_member_two_occupation,
-                                 af_member_three_name,
-                                 af_member_three_age,
-                                 af_member_three_relation,
-                                 af_member_three_occupation,
-                                 af_member_four_name,
-                                 af_member_four_age,
-                                 af_member_four_relation,
-                                 af_member_four_occupation,
-                                 af_emergency_name,
-                                 af_emergency_contact,
-                                 af_emergency_relation,
-                                 af_class) VALUES(
-                                     '$af_child_name',
-                                     '$af_child_gender',
-                                     '$af_mother_name',
-                                     '$af_mother_contact',
-                                     '$af_mother_occupation',
-                                     '$af_father_name',
-                                     '$af_father_contact',
-                                     '$af_father_occupation',
-                                     '$af_address',
-                                     '$af_distance',
-                                     '$af_member_one_name',
-                                     '$af_member_one_age',
-                                     '$af_member_one_relation',
-                                     '$af_member_one_occupation',
-                                     '$af_member_two_name',
-                                     '$af_member_two_age',
-                                     '$af_member_two_relation',
-                                     '$af_member_two_occupation',
-                                     '$af_member_three_name',
-                                     '$af_member_three_age',
-                                     '$af_member_three_relation',
-                                     '$af_member_three_occupation',
-                                     '$af_member_four_name',
-                                     '$af_member_four_age',
-                                     '$af_member_four_relation',
-                                     '$af_member_four_occupation',
-                                     '$af_emergency_name',
-                                     '$af_emergency_contact',
-                                     '$af_emergency_relation',
-                                     '$af_class'
-                                      )";
-            $result = mysqli_query($connection, $query);
-
-            if (!$result) {
-                echo "<div class='alert alert-danger' role='alert'>Something went wrong!</div>";
-            } else {
-                echo "<div class='alert alert-success mt-3' role='alert'>Form submitte. Seat Blocked for 7 days. Please make payment to finalize admission</div>";
-            }
-
-            // echo $data['payment_status'];
-
-            // if (!require("razorpay/checkout/{$checkout}.php")) {
-            //     echo "<div class='alert alert-danger' role='alert'>Something went wrong!</div>";
-            // } else {
-            // }
+        if (isset($_POST['payment_id'])) {
+            echo $_POST['payment_id'];
         }
+
+
+        // if (isset($_POST['submit'])) {
+        //     $af_child_name = mysqli_real_escape_string($connection, $_POST['af_child_name']);
+        //     $af_child_gender = mysqli_real_escape_string($connection, $_POST['af_child_gender']);
+        //     $af_mother_name = mysqli_real_escape_string($connection, $_POST['af_mother_name']);
+        //     $af_mother_contact = mysqli_real_escape_string($connection, $_POST['af_mother_contact']);
+        //     $af_mother_occupation = mysqli_real_escape_string($connection, $_POST['af_mother_occupation']);
+        //     $af_father_name = mysqli_real_escape_string($connection, $_POST['af_father_name']);
+        //     $af_father_contact = mysqli_real_escape_string($connection, $_POST['af_father_contact']);
+        //     $af_father_occupation = mysqli_real_escape_string($connection, $_POST['af_father_occupation']);
+        //     $af_address = mysqli_real_escape_string($connection, $_POST['af_address']);
+        //     $af_distance = mysqli_real_escape_string($connection, $_POST['af_distance']);
+        //     $af_member_one_name = mysqli_real_escape_string($connection, $_POST['af_member_one_name']);
+        //     $af_member_one_age = mysqli_real_escape_string($connection, $_POST['af_member_one_age']);
+        //     $af_member_one_relation = mysqli_real_escape_string($connection, $_POST['af_member_one_relation']);
+        //     $af_member_one_occupation = mysqli_real_escape_string($connection, $_POST['af_member_one_occupation']);
+        //     $af_member_two_name = mysqli_real_escape_string($connection, $_POST['af_member_two_name']);
+        //     $af_member_two_age = mysqli_real_escape_string($connection, $_POST['af_member_two_age']);
+        //     $af_member_two_relation = mysqli_real_escape_string($connection, $_POST['af_member_two_relation']);
+        //     $af_member_two_occupation = mysqli_real_escape_string($connection, $_POST['af_member_two_occupation']);
+        //     $af_member_three_name = mysqli_real_escape_string($connection, $_POST['af_member_three_name']);
+        //     $af_member_three_age = mysqli_real_escape_string($connection, $_POST['af_member_three_age']);
+        //     $af_member_three_relation = mysqli_real_escape_string($connection, $_POST['af_member_three_relation']);
+        //     $af_member_three_occupation = mysqli_real_escape_string($connection, $_POST['af_member_three_occupation']);
+        //     $af_member_four_name = mysqli_real_escape_string($connection, $_POST['af_member_four_name']);
+        //     $af_member_four_age = mysqli_real_escape_string($connection, $_POST['af_member_four_age']);
+        //     $af_member_four_relation = mysqli_real_escape_string($connection, $_POST['af_member_four_relation']);
+        //     $af_member_four_occupation = mysqli_real_escape_string($connection, $_POST['af_member_four_occupation']);
+        //     $af_emergency_name = mysqli_real_escape_string($connection, $_POST['af_emergency_name']);
+        //     $af_emergency_contact = mysqli_real_escape_string($connection, $_POST['af_emergency_contact']);
+        //     $af_emergency_relation = mysqli_real_escape_string($connection, $_POST['af_emergency_relation']);
+        //     $af_class = mysqli_real_escape_string($connection, $_POST['af_class']);
+
+        //     $query = "INSERT INTO admission_form (
+        //                          af_child_name,
+        //                          af_child_gender,
+        //                          af_mother_name,
+        //                          af_mother_contact,
+        //                          af_mother_occupation,
+        //                          af_father_name,
+        //                          af_father_contact,
+        //                          af_father_occupation,
+        //                          af_address,
+        //                          af_distance,
+        //                          af_member_one_name,
+        //                          af_member_one_age,
+        //                          af_member_one_relation,
+        //                          af_member_one_occupation,
+        //                          af_member_two_name,
+        //                          af_member_two_age,
+        //                          af_member_two_relation,
+        //                          af_member_two_occupation,
+        //                          af_member_three_name,
+        //                          af_member_three_age,
+        //                          af_member_three_relation,
+        //                          af_member_three_occupation,
+        //                          af_member_four_name,
+        //                          af_member_four_age,
+        //                          af_member_four_relation,
+        //                          af_member_four_occupation,
+        //                          af_emergency_name,
+        //                          af_emergency_contact,
+        //                          af_emergency_relation,
+        //                          af_class) VALUES(
+        //                              '$af_child_name',
+        //                              '$af_child_gender',
+        //                              '$af_mother_name',
+        //                              '$af_mother_contact',
+        //                              '$af_mother_occupation',
+        //                              '$af_father_name',
+        //                              '$af_father_contact',
+        //                              '$af_father_occupation',
+        //                              '$af_address',
+        //                              '$af_distance',
+        //                              '$af_member_one_name',
+        //                              '$af_member_one_age',
+        //                              '$af_member_one_relation',
+        //                              '$af_member_one_occupation',
+        //                              '$af_member_two_name',
+        //                              '$af_member_two_age',
+        //                              '$af_member_two_relation',
+        //                              '$af_member_two_occupation',
+        //                              '$af_member_three_name',
+        //                              '$af_member_three_age',
+        //                              '$af_member_three_relation',
+        //                              '$af_member_three_occupation',
+        //                              '$af_member_four_name',
+        //                              '$af_member_four_age',
+        //                              '$af_member_four_relation',
+        //                              '$af_member_four_occupation',
+        //                              '$af_emergency_name',
+        //                              '$af_emergency_contact',
+        //                              '$af_emergency_relation',
+        //                              '$af_class'
+        //                               )";
+        //     $result = mysqli_query($connection, $query);
+
+        //     if (!$result) {
+        //         echo "<div class='alert alert-danger' role='alert'>Something went wrong!</div>";
+        //     } else {
+        //         echo "<div class='alert alert-success mt-3' role='alert'>Form submitte. Seat Blocked for 7 days. Please make payment to finalize admission</div>";
+        //     }
+        //}
 
         ?>
         <div class="form-row">
             <div class="col-md-6 m-2 form-floating mb-3">
-                <input name="af_child_name" type="text" class="form-control" id="floatingInput"
+                <input name="af_child_name" type="text" class="form-control" id="af_child_name"
                     placeholder="Child's Name">
                 <label class="form-label" for="floatingInput">Name of Child</label>
             </div>
@@ -235,7 +189,7 @@
 
         <div class="form-row ">
             <div class="col-md-12 m-2 form-floating mb-3">
-                <input name="af_distance" type="text" class="form-control" id="floatingInput"
+                <input name="af_distance" type="number" class="form-control" id="floatingInput"
                     placeholder="Ditance in Kms">
                 <label class="form-label" for="floatingInput">Distance of Home in KMS from School:</label>
             </div>
@@ -261,7 +215,7 @@
                         </td>
                         <td>
                             <div class="col-md-12 m-2 mb-3">
-                                <input name="af_member_one_age" type="text" class="form-control" id="floatingInput"
+                                <input name="af_member_one_age" type="number" class="form-control" id="floatingInput"
                                     placeholder="Age">
                             </div>
                         </td>
@@ -288,7 +242,7 @@
                         </td>
                         <td>
                             <div class="col-md-12 m-2 mb-3">
-                                <input name="af_member_two_age" type="text" class="form-control" id="floatingInput"
+                                <input name="af_member_two_age" type="number" class="form-control" id="floatingInput"
                                     placeholder="Age">
                             </div>
                         </td>
@@ -315,7 +269,7 @@
                         </td>
                         <td>
                             <div class="col-md-12 m-2 mb-3">
-                                <input name="af_member_three_age" type="text" class="form-control" id="floatingInput"
+                                <input name="af_member_three_age" type="number" class="form-control" id="floatingInput"
                                     placeholder="Age">
                             </div>
                         </td>
@@ -342,7 +296,7 @@
                         </td>
                         <td>
                             <div class="col-md-12 m-2 mb-3">
-                                <input name="af_member_four_age" type="text" class="form-control" id="floatingInput"
+                                <input name="af_member_four_age" type="number" class="form-control" id="floatingInput"
                                     placeholder="Age">
                             </div>
                         </td>
@@ -378,7 +332,7 @@
             </div>
 
             <div class="col-md-4 form-floating mb-3">
-                <input name="af_emergency_contact" type="text" class="form-control" id="floatingInput"
+                <input name="af_emergency_contact" type="number" class="form-control" id="floatingInput"
                     placeholder="Contact">
                 <label class="form-label" for="floatingInput">Contact Number</label>
             </div>
@@ -403,9 +357,74 @@
             <label class="form-label" for="floatingSelectAdmissions">Seeking Admission to</label>
         </div>
 
-        <button class="admission-btn btn mt-3" type="submit" name="submit">Submit</button>
-
-
+        <input onclick="pay_now()" type="button" class="admission-btn btn mt-3" value="submit" name="submit" />
     </form>
+
+    <script>
+    function pay_now() {
+        var options = {
+            "key": "rzp_test_s5SlTgzdGzKQT9",
+            "amount": "50000",
+            "currency": "INR",
+            "name": "Toys N Joy Play School",
+            "description": "The best neighbourhood play school",
+            "image": "https://toysnjoy.in/assets/images/logo/logo.png",
+            "handler": function(response) {
+                jQuery.ajax({
+                    type: 'post',
+                    url: 'admissions.php',
+                    data: "payment_id=" + response.razorpay_payment_id,
+                    success: function(result) {
+                        console.log('payment_id=' + response.razorpay_payment_id);
+                        window.location.href = "admissions.php";
+                    }
+                });
+                console.log(response);
+            },
+            "theme": {
+                "color": "#eb4634"
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+        // var af_child_name = jQuery('#af_child_name').val();
+        // var af_child_gender = jQuery('#af_child_gender').val();
+        // var af_mother_name = jQuery('#af_mother_name').val();
+        // var af_mother_contact = jQuery('#af_mother_contact').val();
+        // var af_mother_occupation = jQuery('#af_mother_occupation').val();
+        // var af_father_name = jQuery('#af_father_name').val();
+        // var af_father_contact = jQuery('#af_father_contact').val();
+        // var af_father_occupation = jQuery('#af_father_occupation').val();
+        // var af_distance = jQuery('#af_distance').val();
+        // var af_address = jQuery('#af_address').val();
+
+        // var af_member_one_name = jQuery('#af_member_one_name').val();
+        // var af_member_one_age = jQuery('#af_member_one_age').val();
+        // var af_member_one_contact = jQuery('#af_member_one_contact').val();
+        // var af_member_one_relation = jQuery('#af_member_one_relation').val();
+
+        // var af_member_two_name = jQuery('#af_member_two_name').val();
+        // var af_member_two_age = jQuery('#af_member_two_age').val();
+        // var af_member_two_contact = jQuery('#af_member_two_contact').val();
+        // var af_member_two_relation = jQuery('#af_member_two_relation').val();
+
+        // var af_member_three_name = jQuery('#af_member_three_name').val();
+        // var af_member_three_age = jQuery('#af_member_three_age').val();
+        // var af_member_three_contact = jQuery('#af_member_three_contact').val();
+        // var af_member_three_relation = jQuery('#af_member_three_relation').val();
+
+        // var af_member_four_name = jQuery('#af_member_four_name').val();
+        // var af_member_four_age = jQuery('#af_member_four_age').val();
+        // var af_member_four_contact = jQuery('#af_member_four_contact').val();
+        // var af_member_four_relation = jQuery('#af_member_four_relation').val();
+
+        // var af_emergency_name = jQuery('#af_emergency_name').val();
+        // var af_emergency_contact = jQuery('#af_emergency_contact').val();
+        // var af_emergency_relation = jQuery('#af_emergency_relation').val();
+        // var af_class = jQuery('#af_class').val();
+
+
+    }
+    </script>
 
 </div>
