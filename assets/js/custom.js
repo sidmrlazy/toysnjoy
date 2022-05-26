@@ -104,7 +104,7 @@ function pay_now() {
         // rzp_test_s5SlTgzdGzKQT9
         // rzp_live_ReANxY0HTVzNPf
         key: "rzp_live_ReANxY0HTVzNPf",
-        amount: "50000",
+        amount: "10000",
         currency: "INR",
         name: "Toys N Joy Play School",
         description: "The best neighbourhood play school",
