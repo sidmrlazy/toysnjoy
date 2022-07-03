@@ -83,7 +83,7 @@
                     // Attempt to execute the prepared statement
                     if (mysqli_stmt_execute($statement)) {
                         // Redirect to login page
-                        header("location: dashboard.php");
+                        header("location: index.php");
                     } else {
                         echo "Oops! Something went wrong. Please try again later.";
                     }
@@ -97,58 +97,34 @@
             mysqli_close($connection);
         }
         ?>
-        <img src="assets/images/logo/logo.png" alt="">
-        <!-- <h1>Login</h1>
-        <p>Welcome, Admin</p>
-        <div class="form-floating w-100 mb-3">
-            <input type="text" name="user_name" class="form-control" id="floatingInput" placeholder="admin">
-            <label for="floatingInput">Username</label>
-        </div>
-        <div class="form-floating w-100">
-            <input type="password" name="user_password" class="form-control" id="floatingPassword"
-                placeholder="Password">
-            <label for="floatingPassword">Password</label>
-        </div>
-        <div class="form-floating w-100">
-            <input type="password" name="confirm_user_password" class="form-control" id="floatingPassword"
-                placeholder="Password">
-            <label for="floatingPassword">Confirm Password</label>
-        </div>
-
-        <button class="login-btn" type="submit" name="submit">Submit</button>
-        <div>
-            <a href="register.php">Register</a>
-        </div> -->
-        <div class="wrapper">
+        <div class="wrapper w-100">
             <h2>Sign Up</h2>
             <p>Please fill this form to create an account.</p>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                <div class="form-group">
-                    <label>Username</label>
-                    <input type="text" name="user_name"
+                <div class="form-floating mb-3">
+                    <input name="user_name" value="<?php echo $user_name; ?>" type="text"
                         class="form-control <?php echo (!empty($user_name_err)) ? 'is-invalid' : ''; ?>"
-                        value="<?php echo $user_name; ?>">
+                        id="floatingInput" placeholder="Enter username or mobile number to register">
+                    <label for="floatingInput">Username or Mobile Number</label>
                     <span class="invalid-feedback"><?php echo $user_name_err; ?></span>
                 </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" name="user_password"
+                <div class="form-floating mb-3">
+                    <input name="user_password" value="<?php echo $user_password; ?>" type="password"
                         class="form-control <?php echo (!empty($user_password_err)) ? 'is-invalid' : ''; ?>"
-                        value="<?php echo $user_password; ?>">
+                        id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
                     <span class="invalid-feedback"><?php echo $user_password_err; ?></span>
                 </div>
-                <div class="form-group">
-                    <label>Confirm Password</label>
-                    <input type="password" name="confirm_user_password"
+                <div class="form-floating mb-3">
+                    <input name="confirm_user_password" type="password"
                         class="form-control <?php echo (!empty($confirm_user_password_err)) ? 'is-invalid' : ''; ?>"
-                        value="<?php echo $confirm_user_password; ?>">
+                        value="<?php echo $confirm_user_password; ?>" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Confirm Password</label>
                     <span class="invalid-feedback"><?php echo $confirm_user_password_err; ?></span>
                 </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Submit">
-                    <input type="reset" class="btn btn-secondary ml-2" value="Reset">
-                </div>
-                <p>Already have an account? <a href="login.php">Login here</a>.</p>
+                <button class="login-btn mb-1" value="Submit" type="submit" name="submit">Register</button>
+
+                <p class="mt-2">Already have an account? Click here to <a href="index.php">Login</a>.</p>
             </form>
         </div>
     </form>

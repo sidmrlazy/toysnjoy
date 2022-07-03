@@ -3,9 +3,12 @@
         <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_2h7yicxc.json" background="transparent"
             speed="1" class="enquiry-lottie" loop autoplay></lottie-player>
         <h3>Limited Period Offer</h3>
-        <p>Just Pay the Monthly Tuition Fee of 3000/- NOW to avail our *No Admission Fees*</p>
+        <p>Just Pay the Monthly Tuition Fee of ₹2500/- NOW to avail our *No Admission Fees*</p>
+        <p>Fill out the Admission form to start your child's journey with us</p>
+
+        <a href="admissions.php" class="home-page-form-button">Fill Admission Form</a>
     </div>
-    <form action="" class="col-md-6 enquiry-form" mthod="POST">
+    <!-- <form action="" class="col-md-6 enquiry-form" mthod="POST">
         <?php
         include 'includes/server/config.php';
         if (isset($_POST['submit'])) {
@@ -103,5 +106,5 @@
         </div>
 
         <button class="admission-btn btn mt-3" type="submit" name="submit">Submit</button>
-    </form>
+    </form> -->
 </div>

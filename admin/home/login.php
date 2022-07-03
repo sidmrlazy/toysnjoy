@@ -88,12 +88,12 @@
             mysqli_close($connection);
         }
         ?>
-        <img src="assets/images/logo/logo.png" alt="">
+        <!-- <img src="assets/images/logo/logo.png" alt=""> -->
         <h1>Login</h1>
         <p>Welcome, Admin</p>
         <div class="form-floating w-100 mb-3">
             <input type="text" name="user_name" class="form-control" id="floatingInput" placeholder="admin">
-            <label for="floatingInput">Username</label>
+            <label for="floatingInput">Username or Registered Mobile Number</label>
         </div>
         <div class="form-floating w-100">
             <input type="password" name="user_password" class="form-control" id="floatingPassword"
@@ -101,7 +101,8 @@
             <label for="floatingPassword">Password</label>
         </div>
 
-        <button class="login-btn" type="submit" name="submit">Submit</button>
+        <button class="login-btn mb-1" type="submit" name="submit">Login</button>
+        <a href="register.php" class="reg-btn mb-3">Register</a>
     </form>
 
 
