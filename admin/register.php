@@ -70,11 +70,12 @@
             if (empty($user_name_err) && empty($user_password_err) && empty($confirm_user_password_err)) {
 
                 // Prepare an insert statement
-                $sql = "INSERT INTO users (user_name, user_password) VALUES (?,?)";
+                $sql = "INSERT INTO users (user_name, user_password, user_type) VALUES (?,?,?)";
 
                 if ($statement = mysqli_prepare($connection, $sql)) {
                     // Bind variables to the prepared statement as parameters
-                    mysqli_stmt_bind_param($statement, "ss", $param_username, $param_password);
+                    $user_type = 2;
+                    mysqli_stmt_bind_param($statement, "ssi", $param_username, $param_password, $user_type);
 
                     // Set parameters
                     $param_username = $user_name;
@@ -102,23 +103,17 @@
             <p>Please fill this form to create an account.</p>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="form-floating mb-3">
-                    <input name="user_name" value="<?php echo $user_name; ?>" type="text"
-                        class="form-control <?php echo (!empty($user_name_err)) ? 'is-invalid' : ''; ?>"
-                        id="floatingInput" placeholder="Enter username or mobile number to register">
+                    <input name="user_name" value="<?php echo $user_name; ?>" type="text" class="form-control <?php echo (!empty($user_name_err)) ? 'is-invalid' : ''; ?>" id="floatingInput" placeholder="Enter username or mobile number to register">
                     <label for="floatingInput">Username or Mobile Number</label>
                     <span class="invalid-feedback"><?php echo $user_name_err; ?></span>
                 </div>
                 <div class="form-floating mb-3">
-                    <input name="user_password" value="<?php echo $user_password; ?>" type="password"
-                        class="form-control <?php echo (!empty($user_password_err)) ? 'is-invalid' : ''; ?>"
-                        id="floatingPassword" placeholder="Password">
+                    <input name="user_password" value="<?php echo $user_password; ?>" type="password" class="form-control <?php echo (!empty($user_password_err)) ? 'is-invalid' : ''; ?>" id="floatingPassword" placeholder="Password">
                     <label for="floatingPassword">Password</label>
                     <span class="invalid-feedback"><?php echo $user_password_err; ?></span>
                 </div>
                 <div class="form-floating mb-3">
-                    <input name="confirm_user_password" type="password"
-                        class="form-control <?php echo (!empty($confirm_user_password_err)) ? 'is-invalid' : ''; ?>"
-                        value="<?php echo $confirm_user_password; ?>" id="floatingPassword" placeholder="Password">
+                    <input name="confirm_user_password" type="password" class="form-control <?php echo (!empty($confirm_user_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_user_password; ?>" id="floatingPassword" placeholder="Password">
                     <label for="floatingPassword">Confirm Password</label>
                     <span class="invalid-feedback"><?php echo $confirm_user_password_err; ?></span>
                 </div>
