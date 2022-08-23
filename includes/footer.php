@@ -2,7 +2,7 @@
     <div>
         <img class="mb-3" src="assets/images/logo/logo.png" alt="">
 
-        <div class="footer-pills">
+        <!-- <div class="footer-pills">
             <p>
                 <ion-icon class="footer-icon" name="location"></ion-icon>Address
             </p>
@@ -14,7 +14,7 @@
                 <ion-icon class="footer-icon" name="call"></ion-icon>Contact
             </p>
             <p class="details">+91 9005556677</p>
-        </div>
+        </div> -->
 
         <div class="footer-pills">
             <p>

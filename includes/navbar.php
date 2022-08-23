@@ -52,10 +52,10 @@
                     target="_blank">
                     <ion-icon name="logo-instagram"></ion-icon>
                 </a>
-                <a href="https://wa.me/919005556677?text=I%20have%20an%20enquiry%20" class="nav-social-media-icon"
+                <!-- <a href="https://wa.me/919005556677?text=I%20have%20an%20enquiry%20" class="nav-social-media-icon"
                     target="_blank">
                     <ion-icon name="logo-whatsapp"></ion-icon>
-                </a>
+                </a> -->
             </div>
             <!-- <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
