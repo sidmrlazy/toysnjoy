@@ -34,7 +34,43 @@
 
             $result = mysqli_query($connection, $query);
 
-            if ($result) { ?>
+            if ($result) {
+                $to = "care.toysnjoy@gmail.com, connectonlyn@onlynus.com";
+                $subject = "Website Visitor | Toys N Joy Playschool ";
+                $message = "
+                        <html>
+                            <head>
+
+                            </head>
+                                <body>
+                                
+                                    <table style='border: 1px solid #e7e7e7e7'>
+                                        <tr>
+                                            <th>Full Name</th>
+                                            <th>Contact</th>
+                                            <th>Email</th>
+                                            <th>Contact For</th>
+                                            <th>Details</th>
+                                            <th>Date</th>
+                                        </tr>
+                        
+                                        <tr>
+                                        <td>$contact_name</td>
+                                        <td>$contact_number</td>
+                                        <td>$contact_email</td>
+                                        <td>$contact_reason</td>
+                                        <td>$contact_details</td>
+                                        <td>$contact_date</td>
+                                        </tr>
+                                    </table>
+                                </body>
+                        </html>
+                        ";
+
+                $headers = "MIME-Version: 1.0" . "\r\n";
+                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+                mail($to, $subject, $message, $headers);
+        ?>
         <div class="alert alert-success" role="alert">
             Thank you! We will connect with you shortly.
         </div>
