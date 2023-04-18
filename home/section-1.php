@@ -18,7 +18,7 @@
                             for
                             <br>your Child
                         </h1>
-                        <a href="curriculum.php" class="homepage-btn btn btn-primary">Know More</a>
+                        <a href="about.php" class="homepage-btn btn btn-primary">Know More</a>
                     </div>
                     <div class="col-md-6 homepage-banner-img">
                         <img src="assets/images/vectors/banner-1.gif" alt="Best preschoolin Lucknow ">
