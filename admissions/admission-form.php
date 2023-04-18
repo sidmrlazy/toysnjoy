@@ -98,7 +98,7 @@
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Contact For</label>
-                <select required class="form-select" aria-label="Default select example">
+                <select required name="contact_reason" class="form-select" aria-label="Default select example">
                     <option>Open this menu for options</option>
                     <option value="Summer Camp 2023 - Group A">Summer Camp 2023 - Group A</option>
                     <option value="Summer Camp 2023 - Group B">Summer Camp 2023 - Group B</option>
@@ -110,7 +110,8 @@
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Details</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" name="contact_details" id="exampleFormControlTextarea1"
+                    rows="3"></textarea>
             </div>
 
             <button type="submit" name="submit" class="btn btn-outline-warning w-100">Apply</button>
