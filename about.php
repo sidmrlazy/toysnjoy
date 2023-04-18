@@ -1,5 +1,5 @@
 <?php
-$title = "Discover Us | Toys N Joy Play School | Best Neighbourhood Preschool in Lucknow";
+$title = "Discover Us | Toys N Joy Play School";
 include('includes/header.php') ?>
 <?php //include('under-development.php') 
 ?>

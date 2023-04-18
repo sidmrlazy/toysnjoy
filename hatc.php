@@ -1,4 +1,6 @@
-<?php include('includes/header.php') ?>
+<?php
+$title = "Homework Assistance & Tuition Center | Toys N Joy Play School";
+include('includes/header.php') ?>
 <?php include('includes/navbar.php') ?>
 <div class="container-fluid mt-5 mb-5">
     <nav class="breadcrumbs"
