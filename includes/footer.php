@@ -37,10 +37,7 @@
 
 
 <!-- ADD THIS -->
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-643e6005a9b25445"></script>
-
-
 
 </body>
 
